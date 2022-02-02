@@ -12,7 +12,7 @@ A customizable ToonHUD-esque (TF2 Custom) HUD.
 You can change position, size, font, colors, in-game.
 Also i tried to match clip/ammo part to it's HL2 original state (with a very very hard to understand code though)
 
-This mod is not done yet and thus is not awailiable on Steam Workshop.
+This mod is not done yet and thus is not availiable on Steam Workshop.
 When i feel this mod is ready i'll publish it myself.
 Please refrain to upload this mod yet. Thanks.
 
