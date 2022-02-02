@@ -1,9 +1,12 @@
-![A Hud](https://github.com/VanderCat/YourHUD/blob/main/WorkshopIcon.jpg?raw=true)
 # YourHUD `Alpha`<sup>`TM`</sup>
+<p align="center">
+    <img alt="logo" src="https://github.com/VanderCat/YourHUD/blob/main/img/WorkshopIcon.png?raw=true" width="196">
+</p>
+
 place here a very cool description
 
-![A Hud](https://github.com/VanderCat/YourHUD/blob/main/Armor.jpg?raw=true)
-![With Ammo](https://github.com/VanderCat/YourHUD/blob/main/YesAmmo.jpg?raw=true)
+![A Hud](https://github.com/VanderCat/YourHUD/blob/main/img/Armor.jpg?raw=true)
+![With Ammo](https://github.com/VanderCat/YourHUD/blob/main/img/YesAmmo.jpg?raw=true)
 ## Description
 A customizable ToonHUD-esque (TF2 Custom) HUD.
 You can change position, size, font, colors, in-game.
@@ -16,14 +19,14 @@ Please refrain to upload this mod yet. Thanks.
 I made this mod because i was in need a more "pro" hud i could not find myself.
 
 ## Features
-- Health change watcher ([IMG1](https://github.com/VanderCat/YourHUD/blob/main/hpRecover.jpg?raw=true) [IMG2](https://github.com/VanderCat/YourHUD/blob/main/hpLose.jpg?raw=true))
+- Health change watcher ([IMG1](https://github.com/VanderCat/YourHUD/blob/main/img/hpRecover.jpg?raw=true) [IMG2](https://github.com/VanderCat/YourHUD/blob/main/img/hpLose.jpg?raw=true))
 - Player list on top 
-- you can enable and/or disable drawing of HL2's hud or YourHUD ([IMG1](https://github.com/VanderCat/YourHUD/blob/main/SettingsVisibility.jpg?raw=true))
+- you can enable and/or disable drawing of HL2's hud or YourHUD ([IMG1](https://github.com/VanderCat/YourHUD/blob/main/img/SettingsVisibility.jpg?raw=true))
 - Fully customizable
-    - [Position](https://github.com/VanderCat/YourHUD/blob/main/SettingsOffsets.jpg?raw=true)
-    - [Size](https://github.com/VanderCat/YourHUD/blob/main/SettingsFonts.jpg?raw=true)
-    - [Font](https://github.com/VanderCat/YourHUD/blob/main/SettingsFonts.jpg?raw=true)
-    - [Colors](https://github.com/VanderCat/YourHUD/blob/main/SettingsColors.jpg?raw=true)
+    - [Position](https://github.com/VanderCat/YourHUD/blob/main/img/SettingsOffsets.jpg?raw=true)
+    - [Size](https://github.com/VanderCat/YourHUD/blob/main/img/SettingsFonts.jpg?raw=true)
+    - [Font](https://github.com/VanderCat/YourHUD/blob/main/img/SettingsFonts.jpg?raw=true)
+    - [Colors](https://github.com/VanderCat/YourHUD/blob/main/img/SettingsColors.jpg?raw=true)
 
 ## Planned Features
 - TF2-esque playername showcase
