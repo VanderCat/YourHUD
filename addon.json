@@ -1,0 +1,12 @@
+{
+    "title"        :    "YourHUD",
+    "type"        :    "tool",
+    "tags"        :    [ "cartoon", "build" ],
+    "ignore"    :
+    [
+        "*.psd",
+        "*.vcproj",
+        "*.txt",
+        "*.svn*"
+    ]
+} 
