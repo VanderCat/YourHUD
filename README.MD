@@ -2,8 +2,9 @@
 <p align="center">
     <img alt="logo" src="https://github.com/VanderCat/YourHUD/blob/main/img/WorkshopIcon.png?raw=true" width="196">
 </p>
-
-place here a very cool description
+<p align="center">
+    place here a very cool description
+</p>
 
 ![A Hud](https://github.com/VanderCat/YourHUD/blob/main/img/Armor.jpg?raw=true)
 ![With Ammo](https://github.com/VanderCat/YourHUD/blob/main/img/YesAmmo.jpg?raw=true)
