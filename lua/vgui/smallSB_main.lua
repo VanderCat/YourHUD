@@ -1,4 +1,17 @@
-include("includes/modules/customdraw.lua")
+--[[
+	Copyright © 2022 VanderCat
+	
+	THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, 
+	EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES 
+	OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+	NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS 
+	BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN 
+	AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR 
+	IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
+	SOFTWARE.
+]]--
+
+local customdraw = include("includes/modules/customdraw.lua")
 
 local PLAYER_AVATAR = {
 
@@ -63,6 +76,13 @@ Init = function (self)
     self.avatarlist = vgui.Create( "DHorizontalScroller", self )
     self.avatarlist:Dock( FILL )
     self.avatarlist:SetOverlap(30)
+
+    function self.avatarlist.btnLeft:Paint( w, h )
+        draw.RoundedBox( 0, 0, 0, w, h, Color( 0, 0, 0, 0 ) )
+    end
+    function self.avatarlist.btnRight:Paint( w, h )
+        draw.RoundedBox( 0, 0, 0, w, h, Color( 0, 0, 0, 0 ) )
+    end
 
     self.time = {
         number = system.SteamTime()
