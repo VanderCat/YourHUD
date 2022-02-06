@@ -61,6 +61,7 @@ end
     CreateClientConVar("cl_originalhud_ammo_enabled", "0", true, nil, nil, 0, 1)
     CreateClientConVar("cl_originalhud_armor_enabled", "0", true, nil, nil, 0, 1)
     CreateClientConVar("cl_originalhud_alt_enabled", "0", true, nil, nil, 0, 1)
+    CreateClientConVar("cl_originalhud_playerinfo_enabled", "0", true, nil, nil, 0, 1)
 
 --  VANDERHUD
 --      ENABLE/DISABLE
@@ -72,6 +73,8 @@ end
             CreateClientConVar("cl_yourhud_ammo_enabled", "1", true, nil, nil, 0, 1)
             CreateClientConVar("cl_yourhud_alt_enabled", "1", true, nil, nil, 0, 1)
             CreateClientConVar("cl_yourhud_ammoreserve_enabled", "1", true, nil, nil, 0, 1)
+--          CENTER
+            CreateClientConVar("cl_yourhud_playerinfo_enabled", "1", true, nil, nil, 0, 1)
 --      DAMAGE INDICATOR TIME
         CreateClientConVar("cl_yourhud_damagetime", "1", true)
 --      OFFSET

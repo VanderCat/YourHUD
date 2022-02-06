@@ -11,9 +11,9 @@
 	SOFTWARE.
 ]]--
 
-include("includes/modules/customdraw.lua")
+local customdraw = include("includes/modules/customdraw.lua")
 
-function HUDDrawTargetID()
+local function HUDDrawTargetID(self)
 
     local TargetID = {
         hpFont = "FontHUDtargetSmall",
@@ -34,8 +34,10 @@ function HUDDrawTargetID()
 
 	if ( TargetID.trace.Entity:IsPlayer() ) then
 		TargetID.text = TargetID.trace.Entity:Nick()
+        TargetID.team = TargetID.trace.Entity:Team()
 	else
-		text = TargetID.trace.Entity:GetClass()
+		TargetID.text = TargetID.trace.Entity:GetClass()
+        TargetID.team = 0
 	end
     TargetID.textSize = customdraw.GetTextSize(TargetID.text,TargetID.font) 
 	
@@ -59,7 +61,16 @@ function HUDDrawTargetID()
     end
     surface.DrawRect(x,y,w,h)
 
-	customdraw.DrawTextWithShadow(TargetID.hp, TargetID.pos-TargetID.hpTextSize/2- Vector(TargetID.textSize.x/2+TargetID.hpTextSize.x/2+16)/2, self:GetTeamColor(TargetID.trace.Entity),TargetID.hpFont)
-    customdraw.DrawTextWithShadow(TargetID.text, TargetID.pos - TargetID.textSize/2 +Vector(TargetID.textSize.x/2+TargetID.hpTextSize.x/2+16)/2, self:GetTeamColor(TargetID.trace.Entity),TargetID.font)
+	customdraw.DrawTextWithShadow(TargetID.hp, TargetID.pos-TargetID.hpTextSize/2- Vector(TargetID.textSize.x/2+TargetID.hpTextSize.x/2+16)/2, team.GetColor(TargetID.team),TargetID.hpFont)
+    customdraw.DrawTextWithShadow(TargetID.text, TargetID.pos - TargetID.textSize/2 +Vector(TargetID.textSize.x/2+TargetID.hpTextSize.x/2+16)/2, team.GetColor(TargetID.team),TargetID.font)
 
 end
+
+hook.Add( "HUDDrawTargetID", "YourHUDPlayerInfo", function()
+    if (GetConVar("cl_yourhud_playerinfo_enabled"):GetBool()) then
+        HUDDrawTargetID(self)
+    end
+    if (!GetConVar("cl_originalhud_playerinfo_enabled"):GetBool()) then
+        return false
+    end
+end )
