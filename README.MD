@@ -1,6 +1,6 @@
 # YourHUD `Beta`<sup>`TM`</sup>
 <p align="center">
-    <img alt="logo" src="https://github.com/VanderCat/YourHUD/blob/main/img/WorkshopIcon.png?raw=true" width="196">
+    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2744847052"><img alt="logo" src="https://github.com/VanderCat/YourHUD/blob/main/img/WorkshopIcon.png?raw=true" width="196"></a>
 </p>
 <p align="center">
     place here a very cool description
@@ -20,7 +20,7 @@ I made this mod because i was in need a more "pro" hud i could not find myself.
 - Health change watcher ([IMG1](https://github.com/VanderCat/YourHUD/blob/main/img/hpRecover.jpg?raw=true) [IMG2](https://github.com/VanderCat/YourHUD/blob/main/img/hpLose.jpg?raw=true))
 - Player list on top 
 - you can enable and/or disable drawing of HL2's hud or YourHUD ([IMG1](https://github.com/VanderCat/YourHUD/blob/main/img/SettingsVisibility.jpg?raw=true))
-- Fully customizable
+- [Fully customizable](https://github.com/VanderCat/YourHUD/blob/main/img/Settings.png?raw=true)
     - [Position](https://github.com/VanderCat/YourHUD/blob/main/img/SettingsOffsets.jpg?raw=true)
     - [Size](https://github.com/VanderCat/YourHUD/blob/main/img/SettingsFonts.jpg?raw=true)
     - [Font](https://github.com/VanderCat/YourHUD/blob/main/img/SettingsFonts.jpg?raw=true)
@@ -37,11 +37,18 @@ I made this mod because i was in need a more "pro" hud i could not find myself.
     - or [download](https://dl.dafont.com/dl/?f=coolvetica) it and install (Coolvetica RG)
 
 # Installation
+Download it on [steam workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=2744847052)
+
+or
+
 Just clone the repo to addons folder
 ```sh
 %SteamLibrary%/GarrysMod/garrysmod/addons/
 ```
-or download .zip and extract the folder to provided filepath
+
+or
+
+download latest release and extract the folder to provided filepath
 
 # License
 Copyright © 2022 VanderCat
