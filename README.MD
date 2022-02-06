@@ -10,7 +10,7 @@
 ## Description
 A customizable ToonHUD-esque (TF2 Custom) HUD.
 You can change position, size, font, colors, in-game.
-Also i tried to match clip/ammo part to it's HL2 original state ([with a very very hard to understand code though](https://github.com/VanderCat/YourHUD/blob/main/lua/autorun/client/HUDmain.lua#L155))
+Also i tried to match clip/ammo part to it's HL2 original state ([with a very very hard to understand code though](https://github.com/VanderCat/YourHUD/blob/main/lua/autorun/client/HUDmain.lua#L167))
 
 I made this mod because i was in need a more "pro" hud i could not find myself.
 
