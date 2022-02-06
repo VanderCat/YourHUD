@@ -301,9 +301,11 @@ hook.Add( "PopulateToolMenu", "YourHUDSettingsHook", function()
                         end
                         surface.CreateFont(data, {font = "Coolvetica Rg",size = size})
                     else
-                        PrintTable(fonts.available)
-                        PrintTable(fonts.selected)
-                        print(fonts.selected[data])
+                        if (YourHUDdebug) then
+                            PrintTable(fonts.available)
+                            PrintTable(fonts.selected)
+                            print(fonts.selected[data])
+                        end
                         surface.CreateFont(data,fonts.available[fonts.selected[data]])
                     end
                     file.Write("yourhud/fonts.json", util.TableToJSON(fonts))

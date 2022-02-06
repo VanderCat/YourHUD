@@ -12,7 +12,6 @@
 ]]--
 
 local customdraw = {}
-
 function customdraw.GetTextSize(text, font)
 	font = font or "Default"
 	surface.SetFont(font)
@@ -29,7 +28,9 @@ function customdraw.DrawText(text, pos, clr, font)
 	surface.DrawText(text)
 	surface.SetTextColor(oldColor)
 	surface.SetDrawColor(clr:Unpack())
-	--surface.DrawOutlinedRect(pos.x,pos.y,customdraw.GetTextSize(text,font).x, customdraw.GetTextSize(text,font).y, 2)
+	if (YourHUDdebug) then
+		surface.DrawOutlinedRect(pos.x,pos.y,customdraw.GetTextSize(text,font).x, customdraw.GetTextSize(text,font).y, 2)
+	end
 end
 
 function customdraw.DrawTextWithShadow(text, pos, clr, font, shadowOfset, clrShad)

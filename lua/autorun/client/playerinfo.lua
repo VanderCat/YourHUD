@@ -22,11 +22,11 @@ local function HUDDrawTargetID(self)
         tr = util.GetPlayerTrace(LocalPlayer()),
         pos = Vector(gui.MousePos())
     }
-
+ 
     TargetID.trace = util.TraceLine( TargetID.tr )
 
     if (TargetID.pos.x == 0 and TargetID.pos.y == 0 ) then
-        TargetID.pos = customdraw.Relative(Vector(50,60))
+        TargetID.pos = customdraw.Relative(Vector(50,53))
 	end
 
 	if ( !TargetID.trace.Hit ) then return end
@@ -34,35 +34,41 @@ local function HUDDrawTargetID(self)
 
 	if ( TargetID.trace.Entity:IsPlayer() ) then
 		TargetID.text = TargetID.trace.Entity:Nick()
-        TargetID.team = TargetID.trace.Entity:Team()
+        TargetID.color = team.GetColor(TargetID.trace.Entity:Team())
 	else
+        if (!YourHUDdebug) then return end
 		TargetID.text = TargetID.trace.Entity:GetClass()
-        TargetID.team = 0
+        TargetID.team = Color(128,128,128,255)
 	end
     TargetID.textSize = customdraw.GetTextSize(TargetID.text,TargetID.font) 
 	
     TargetID.hp = TargetID.trace.Entity:Health()
 	TargetID.hpTextSize = customdraw.GetTextSize(TargetID.hp,TargetID.hpFont)
 
-    surface.SetDrawColor(255,255,255)
-    local x = (TargetID.pos-TargetID.hpTextSize/2- Vector(TargetID.textSize.x/2+TargetID.hpTextSize.x/2+16)/2):Unpack()
-    local y = 0
-    if TargetID.pos.y-TargetID.hpTextSize.y/2 > TargetID.pos.y-TargetID.textSize.y/2  then 
-        y = TargetID.pos.y-TargetID.hpTextSize.y/2 
-    else
-        y = TargetID.pos.y-TargetID.hpTextSize.y/2 
-    end
-    local w = (TargetID.textSize+TargetID.hpTextSize+Vector(16)):Unpack()
-    local h = 0
-    if TargetID.textSize.y > TargetID.hpTextSize.y then 
-        h = TargetID.textSize.y
-    else
-        h = TargetID.hpTextSize.y
-    end
-    surface.DrawRect(x,y,w,h)
+    -- FIXME: fucking rewrite it i hate how it works but fuck it
+    local w = TargetID.textSize.x+TargetID.hpTextSize.x+16
+    local h = math.min(TargetID.textSize.y,TargetID.hpTextSize.y)
+    local x = TargetID.pos.x-w/2
+    local y = TargetID.pos.y-math.min(TargetID.textSize.y,TargetID.hpTextSize.y)/2
 
-	customdraw.DrawTextWithShadow(TargetID.hp, TargetID.pos-TargetID.hpTextSize/2- Vector(TargetID.textSize.x/2+TargetID.hpTextSize.x/2+16)/2, team.GetColor(TargetID.team),TargetID.hpFont)
-    customdraw.DrawTextWithShadow(TargetID.text, TargetID.pos - TargetID.textSize/2 +Vector(TargetID.textSize.x/2+TargetID.hpTextSize.x/2+16)/2, team.GetColor(TargetID.team),TargetID.font)
+    local a -- REWRITE
+    local b -- REWRITE
+    if (TargetID.hpTextSize.y < TargetID.textSize.y) then -- REWRITE
+        a =  math.min -- REWRITE
+        b =  math.max -- REWRITE
+    else -- REWRITE
+        a =  math.max -- REWRITE
+        b =  math.min -- REWRITE
+    end -- REWRITE
+    local hppos = Vector(x,y+(h-a(TargetID.textSize.y,TargetID.hpTextSize.y))/2) -- REWRITE
+    local pnamepos = Vector(x+TargetID.hpTextSize.x+16,y+(h-b(TargetID.textSize.y,TargetID.hpTextSize.y))/2) -- REWRITE
+    -- REWRITE
+    -- REWRITE-- REWRITE-- REWRITE-- REWRITE-- REWRITE-- REWRITE-- REWRITE-- REWRITE-- REWRITE-- REWRITE-- REWRITE-- REWRITE-- REWRITE-- REWRITE-- REWRITE-- REWRITE-- REWRITE-- REWRITE-- REWRITE-- REWRITE-- REWRITE-- REWRITE
+    surface.SetDrawColor(0,0,0,128)
+    
+    --surface.DrawRect(x,y,w,h)
+	customdraw.DrawTextWithShadow(TargetID.hp, hppos, team.GetColor(TargetID.team),TargetID.hpFont)
+    customdraw.DrawTextWithShadow(TargetID.text, pnamepos, team.GetColor(TargetID.team),TargetID.font)
 
 end
 

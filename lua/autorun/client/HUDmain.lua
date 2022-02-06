@@ -10,6 +10,9 @@
 	IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
 	SOFTWARE.
 ]]--
+
+-- YourHUDdebug = true -- uncomment if debugging (or you can just run in console lua_run_cl YourHUDdebug = true)
+
 include("vgui/smallSB_main.lua")
 local customdraw = include("includes/modules/customdraw.lua")
 local MCVT = include("includes/modules/massvar.lua")
