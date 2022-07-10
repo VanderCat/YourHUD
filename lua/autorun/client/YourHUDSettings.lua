@@ -36,7 +36,12 @@ else
                 size=32
             }
         },
-        selected={FontHUD=1,FontHUDsmall=2,FontHUDtarget=3}
+        selected={
+            FontHUD=1,
+            FontHUDsmall=2,
+            FontHUDtarget=3,
+            FontHUDtargetSmall=2
+        }
     }
     file.CreateDir("yourhud")
     file.Write("yourhud/fonts.json", util.TableToJSON(fonts))

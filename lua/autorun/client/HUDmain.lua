@@ -18,9 +18,9 @@ local customdraw = include("includes/modules/customdraw.lua")
 local MCVT = include("includes/modules/massvar.lua")
 local flux = include("includes/modules/flux.lua")
 
-concommand.Add("testopen", function()
+--[[concommand.Add("testopen", function()
 	SmallSB_Main = vgui.Create("SmallSB_Main") 
-end)
+end)]]
 
 local hide = {
 }
@@ -43,7 +43,11 @@ local hp = {
 	trns = Color(0,0,0, 0)
 }
 hook.Add ("Think", "HUDUpdate", function()
-	if GetConVar("cl_yourhud_damage_enabled"):GetBool() then
+	local convar = GetConVar("cl_yourhud_damage_enabled")
+	if not convar then
+		return
+	end
+	if convar:GetBool() then
 		local dt = FrameTime()
 		local plr = LocalPlayer()
 		if (!IsValid(plr)) then return end
