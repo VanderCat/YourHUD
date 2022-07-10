@@ -22,17 +22,17 @@ else
         available={
             {
                 DisplayName="Default",
-                font="Coolvetica Rg",
+                font="Coolvetica",
                 size=128
             },
             {
                 DisplayName="Default Min",
-                font="Coolvetica Rg",
+                font="Coolvetica",
                 size=64
             },
             {
                 DisplayName="Default Small",
-                font="Coolvetica Rg",
+                font="Coolvetica",
                 size=32
             }
         },
@@ -235,21 +235,21 @@ hook.Add( "PopulateToolMenu", "YourHUDSettingsHook", function()
             combo:SetSortItems(false)
             combo:SetValue("[SELECT]")
 
-            combo:AddChoice("HP")
-            combo:AddChoice("HP Low")
+            combo:AddChoice("Health")
+            combo:AddChoice("Low Health")
             combo:AddSpacer()
 
             combo:AddChoice("Damage Indicator")
-            combo:AddChoice("D. Indicator Transition")
+            combo:AddChoice("Damage Indicator Fade")
             combo:AddChoice("Heal Indicator")
-            combo:AddChoice("H. Indicator Transition")
+            combo:AddChoice("Heal Indicator Fade")
             combo:AddSpacer()
 
             combo:AddChoice("Ammo")
-            combo:AddChoice("Ammo Low")
+            combo:AddChoice("Low Ammo")
             combo:AddSpacer()
 
-            combo:AddChoice("Ammo Reserve")
+            combo:AddChoice("Clip")
             combo:AddChoice("Ammo Alternative")
             combo:AddChoice("Armor")
         
@@ -283,10 +283,10 @@ hook.Add( "PopulateToolMenu", "YourHUDSettingsHook", function()
             panel:AddItem(FontList)
         local applycombo = vgui.Create("DComboBox",btnpanel)
             applycombo:Dock(FILL)
-            applycombo:AddChoice("Text Main", "FontHUD", true)
-            applycombo:AddChoice("Text Small", "FontHUDsmall")
-            applycombo:AddChoice("Text PlayerName", "FontHUDtarget")
-            applycombo:AddChoice("Text PlayerHP", "FontHUDtargetSmall")
+            applycombo:AddChoice("Health and Ammo", "FontHUD", true)
+            applycombo:AddChoice("Armor, Clip, Alt, Damage", "FontHUDsmall")
+            applycombo:AddChoice("Player Name", "FontHUDtarget")
+            applycombo:AddChoice("Player Health", "FontHUDtargetSmall")
             panel:AddItem(applycombo)
         local btnpanel = vgui.Create("DPanel")
             local apply = vgui.Create("DButton",btnpanel)
@@ -304,7 +304,7 @@ hook.Add( "PopulateToolMenu", "YourHUDSettingsHook", function()
                         else
                             size = 64
                         end
-                        surface.CreateFont(data, {font = "Coolvetica Rg",size = size})
+                        surface.CreateFont(data, {font = "Coolvetica",size = size})
                     else
                         if (YourHUDdebug) then
                             PrintTable(fonts.available)
@@ -321,7 +321,7 @@ hook.Add( "PopulateToolMenu", "YourHUDSettingsHook", function()
                 function remove.DoClick()
                     local id, data = applycombo:GetSelected()
                     local k, v = FontList:GetSelectedLine()
-                    if k == nil then fonts.available = {{DisplayName="Default",font="Coolvetica Rg",size=128},{DisplayName="Default Min",font="Coolvetica Rg",size=64}} return end
+                    if k == nil then fonts.available = {{DisplayName="Default",font="Coolvetica",size=128},{DisplayName="Default Min",font="Coolvetica",size=64}} return end
                     fonts.available[k] = nil
                     if fonts.selected[data] > #fonts.available then 
                         fonts.selected[data] = #fonts.available
@@ -364,10 +364,16 @@ hook.Add( "PopulateToolMenu", "YourHUDSettingsHook", function()
             local strike = FontCreator:CheckBox("Strikeout")
                 strike:SetTooltip("Add a strike through")
                 strike:SetValue(false)
-            local Save = FontCreator:Button("Save")
+            local Save = FontCreator:Button("Add")
                 function Save.DoClick()
+                    local name = DisplayName:GetValue()
+                    for k, v in pairs(fonts.available) do
+                        if v.DisplayName == name then
+                            fonts.available[k] = nil
+                        end
+                    end
                     table.insert(fonts.available, {
-                        DisplayName = DisplayName:GetValue(),
+                        DisplayName = name,
                         font = FontName:GetValue(),
                         size = size:GetValue(),
                         weight = weight:GetValue(),

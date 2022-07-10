@@ -25,16 +25,15 @@ I made this mod because i was in need a more "pro" hud i could not find myself.
     - [Size](https://github.com/VanderCat/YourHUD/blob/main/img/SettingsFonts.jpg?raw=true)
     - [Font](https://github.com/VanderCat/YourHUD/blob/main/img/SettingsFonts.jpg?raw=true)
     - [Colors](https://github.com/VanderCat/YourHUD/blob/main/img/SettingsColors.jpg?raw=true)
+- TF2-esque playername showcase (but more like vanilla)
 
 ## Planned Features
-- TF2-esque playername showcase
 - Show player state (dead or alive) on mini scoreboard
 - Change HUD elements align
 
 # Broken
-- To use coolvetica default font you need to download and install it in system (bcs it's not free 😒)
-    - You can just alter font in settings though
-    - or [download](https://dl.dafont.com/dl/?f=coolvetica) it and install (Coolvetica RG)
+- ~~To use coolvetica default font you need to download and install it in system (bcs it's not free 😒)~~
+    - Turns out there's already font in the game's files! HUD will be using it from now on.
 
 # Installation
 Download it on [steam workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=2744847052)
